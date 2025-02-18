@@ -1,0 +1,41 @@
+Steps of Analysis
+
+1️⃣ Retrieve Total Number of Orders
+Count the total number of unique orders placed in the dataset.
+Use SQL aggregation (COUNT(DISTINCT order_id)) to determine the total orders.
+
+2️⃣ Calculate Total Revenue
+Sum the total revenue generated from pizza sales.
+Use SQL aggregation (SUM(price * quantity)) to calculate the total revenue.
+
+3️⃣ Identify the Highest-Priced Pizza
+Find the pizza with the highest unit price.
+Use ORDER BY price DESC and limit results to 1.
+
+4️⃣ Identify the Most Common Pizza Size Ordered
+Count the occurrences of each pizza size in orders.
+Use GROUP BY size and ORDER BY COUNT(*) DESC to find the most popular size.
+
+5️⃣ List the Top 5 Most Ordered Pizza Types
+Retrieve the top 5 pizza types with the highest order quantities.
+Use GROUP BY pizza_type and ORDER BY SUM(quantity) DESC with LIMIT 5.
+
+6️⃣ Find Total Quantity of Each Pizza Category Ordered
+Join necessary tables to link pizza categories and order quantities.
+Use GROUP BY category and SUM(quantity) to calculate total orders per category.
+
+7️⃣ Determine Distribution of Orders by Hour
+Extract the hour from the order timestamp.
+Use GROUP BY hour and COUNT(order_id) to determine order frequency per hour.
+
+8️⃣ Category-Wise Distribution of Pizzas
+Join tables to categorize pizzas and count the number of orders per category.
+Use GROUP BY category and SUM(quantity).
+
+9️⃣ Calculate Average Number of Pizzas Ordered Per Day
+Group orders by date and calculate the daily average pizza orders.
+Use GROUP BY order_date and AVG(quantity).
+
+🔟 Determine the Top 3 Most Ordered Pizza Types by Revenue
+Compute total revenue for each pizza type (SUM(price * quantity)).
+Use ORDER BY revenue DESC and LIMIT 3.
